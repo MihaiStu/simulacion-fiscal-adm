@@ -955,31 +955,31 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
           <th style="padding:8px;text-align:center">Estado</th>
         </tr></thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border);background:rgba(245,158,11,.06)">
+          <tr style="border-bottom:1px solid var(--border);background:rgba(16,185,129,.06)">
             <td style="padding:8px" class="fs12">Mosca Marítimo S.L.</td>
             <td style="padding:8px" class="fs12 text-accent">26_ADL0006</td>
             <td style="padding:8px;text-align:right" class="fw7 text-success">32.879,71 €</td>
-            <td style="padding:8px;text-align:center"><span class="badge b-danger">01/04/2026 ← 13 días</span></td>
-            <td style="padding:8px;text-align:center"><span class="badge b-warn">Anticipable</span></td>
+            <td style="padding:8px;text-align:center"><span class="badge b-success">01/04/2026 ✅</span></td>
+            <td style="padding:8px;text-align:center"><span class="badge b-success">Cobrada</span></td>
           </tr>
-          <tr style="border-bottom:1px solid var(--border)">
+          <tr style="border-bottom:1px solid var(--border);background:rgba(16,185,129,.06)">
             <td style="padding:8px" class="fs12">Transportes El Mosca S.A.</td>
             <td style="padding:8px" class="fs12 text-accent">26_ADL0005</td>
             <td style="padding:8px;text-align:right" class="fw7 text-success">3.872,00 €</td>
-            <td style="padding:8px;text-align:center"><span class="badge b-warn">07/04/2026</span></td>
-            <td style="padding:8px;text-align:center"><span class="badge b-warn">Anticipable</span></td>
+            <td style="padding:8px;text-align:center"><span class="badge b-success">07/04/2026 ✅</span></td>
+            <td style="padding:8px;text-align:center"><span class="badge b-success">Cobrada</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
             <td style="padding:8px" class="fs12">Mosca Marítimo S.L.</td>
             <td style="padding:8px" class="fs12 text-accent">26_ADL0007</td>
             <td style="padding:8px;text-align:right" class="fw7 text-success">29.754,63 €</td>
-            <td style="padding:8px;text-align:center"><span class="badge b-muted">04/05/2026</span></td>
+            <td style="padding:8px;text-align:center"><span class="badge b-warn">04/05/2026</span></td>
             <td style="padding:8px;text-align:center"><span class="badge b-warn">Anticipable</span></td>
           </tr>
           <tr style="border-bottom:2px solid var(--border);background:rgba(16,185,129,.06)">
-            <td style="padding:8px" class="fw7" colspan="2">TOTAL PENDIENTE COBRO</td>
-            <td style="padding:8px;text-align:right" class="fw7 text-success" style="font-size:16px">66.506,34 €</td>
-            <td style="padding:8px;text-align:center" class="fs11 text-muted">Abr: 36.751€ · May: 29.755€</td>
+            <td style="padding:8px" class="fw7" colspan="2">PENDIENTE COBRO</td>
+            <td style="padding:8px;text-align:right" class="fw7 text-success" style="font-size:16px">29.754,63 €</td>
+            <td style="padding:8px;text-align:center" class="fs11 text-muted">ADL006+ADL005 cobradas · ADL007 vence 04/05</td>
             <td style="padding:8px"></td>
           </tr>
         </tbody>
@@ -987,26 +987,26 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px">
       <div style="background:rgba(16,185,129,.08);border-radius:8px;padding:10px">
-        <div class="fs11 text-muted">Caja hoy (19/03) ES40</div>
-        <div class="fw7 text-success" style="font-size:16px">15.274 €</div>
+        <div class="fs11 text-muted">Cuenta SL total (08/04)</div>
+        <div class="fw7 text-success" style="font-size:16px">50.721 €</div>
       </div>
       <div style="background:rgba(245,158,11,.08);border-radius:8px;padding:10px">
-        <div class="fs11 text-muted">+ Cobro ~01/04 (26_ADL0006)</div>
-        <div class="fw7 text-accent" style="font-size:16px">+32.880 €</div>
+        <div class="fs11 text-muted">Gastos comprometidos</div>
+        <div class="fw7 text-warn" style="font-size:16px">−26.347 €</div>
       </div>
       <div style="background:rgba(239,68,68,.08);border-radius:8px;padding:10px">
-        <div class="fs11 text-muted">− IVA T1 + M111 (20/04)</div>
-        <div class="fw7 text-danger" style="font-size:16px">−17.100 €</div>
+        <div class="fs11 text-muted">IVA y impuestos reservados</div>
+        <div class="fw7 text-danger" style="font-size:16px">−18.900 €</div>
       </div>
       <div style="background:rgba(16,185,129,.08);border:1px solid var(--success);border-radius:8px;padding:10px">
-        <div class="fs11 text-muted">Caja estimada 20/04 ✅</div>
-        <div class="fw7 text-success" style="font-size:16px">~31.000 €</div>
-        <div class="fs11 text-muted">IVA T1 CUBIERTO</div>
+        <div class="fs11 text-muted">Caja libre disponible</div>
+        <div class="fw7 text-success" style="font-size:16px">5.475 €</div>
+        <div class="fs11 text-muted">+ ADL007 (29.755€) vence 04/05</div>
       </div>
     </div>
     <div class="alert a-success mt3" style="margin-top:8px">
-      <strong>✅ IVA T1 (20/04) está cubierto.</strong>
-      <span> El cobro de 26_ADL0006 (32.880€) llega ~01/04 — antes del vencimiento del IVA (20/04). Caja proyectada 20/04: ~31.000€ tras pagar 17.100€ a Hacienda.
+      <strong>✅ ADL006 (32.880€) y ADL005 (3.872€) cobradas.</strong>
+      <span> Cuenta SL 08/04: 50.721€ total · 18.286€ a pagar el 20/04 (IVA T1 + M111 + aplaz.SL) → quedan ~32.435€. ADL007 (29.755€) vence 04/05 — refuerza caja para nóminas mayo.
       Centro de Fisio (686€) pagado con empresa durante baja Mihai → <strong>cuenta 551 préstamo socio</strong> (facturas disponibles) — NO afecta al BAI.</span>
     </div>
   </div>
@@ -1129,20 +1129,20 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
         <tr><td class="text-muted">Resultado 2025</td><td class="fw7 text-danger">-7.807 € (pérdidas)</td></tr>
         <tr><td class="text-muted">IS 2025</td><td>0 € (pérdidas)</td></tr>
         <tr><td class="text-muted">BINs compensables 2026</td><td class="text-success fw7">7.807 €</td></tr>
-        <tr><td class="text-muted">Facturación 2026 YTD (71 días)</td><td class="fw7">111.380 €</td></tr>
-        <tr><td class="text-muted">BAI 2026 declarado Odoo</td><td class="text-warn">81.253 € ⚠ incompleto</td></tr>
-        <tr><td class="text-muted">BAI 2026 ajustado (extractos reales)</td><td class="fw7 text-success">~52.000 €</td></tr>
+        <tr><td class="text-muted">Facturación 2026 T1 (90 días · confirmado)</td><td class="fw7">151.023 €</td></tr>
+        <tr><td class="text-muted">BAI T1 2026 real (banco confirmado)</td><td class="fw7 text-success">~73.500 € ✅</td></tr>
+        <tr><td class="text-muted">BAI 2026 anual proyectado</td><td class="fw7 text-success">~220.000 € (ver P&G trimestral)</td></tr>
         <tr><td class="text-muted">Nóminas en B (no deducible)</td><td class="text-warn fw7">1.200 €/mes · 14.400 €/año</td></tr>
-        <tr><td class="text-muted">IS 2026 provisionado</td><td class="text-danger fw7">0 € ⚠ URGENTE</td></tr>
-        <tr><td class="text-muted">IS 2026 estimado al 25%</td><td class="text-warn fw7">~11.048 € (BI ~44.193 €)</td></tr>
-        <tr><td class="text-muted">Tesorería real 3 cuentas (16/03/2026)</td><td class="text-success fw7">31.449 €</td></tr>
+        <tr><td class="text-muted">IS 2026 estimado al 25%</td><td class="text-danger fw7">~65.000 € ⚠ reservar ~4k€/mes</td></tr>
+        <tr><td class="text-muted">IS 2026 provisionado</td><td class="text-danger fw7">0 € ⚠ pago en jul 2027</td></tr>
+        <tr><td class="text-muted">Tesorería SL (08/04/2026)</td><td class="text-success fw7">50.721 € (caja libre: 5.475 €)</td></tr>
         <tr><td class="text-muted">Patrimonio Neto</td><td>76.446 €</td></tr>
       </table>
     </div>
     <div class="card">
       <div class="section-label" style="margin-top:0">Optimización IS 2026 — Ahorro estimado</div>
       <table>
-        <tr><td class="text-muted">Sin optimización (IS 25%, BI ~44.193 €)</td><td class="text-danger">~11.048 € (YTD) / ~53.248 €/año</td></tr>
+        <tr><td class="text-muted">Sin optimización (IS 25%, BI ~252.000 €/año)</td><td class="text-danger">~65.000 €/año (proyección 2026)</td></tr>
         <tr><td class="text-muted">BINs 2025</td><td class="text-success">-1.952 €</td></tr>
         <tr><td class="text-muted">Amort. libre 2318MFY+3368LZP</td><td class="text-success">-13.000 € (año 1)</td></tr>
         <tr><td class="text-muted">Amort. libre 0704KVS</td><td class="text-success">-6.611 € (si capitaliza, 26.446€ × 25%)</td></tr>
