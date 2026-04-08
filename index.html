@@ -283,6 +283,10 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
     <strong>⚠ NUEVO (07/04): Semirremolque R0471BBS — no registrado en balance Odoo</strong>
     <span>Descubierto por 2 multas DGT (10/02/2026): ITV caducada (200€) + sin extintor (80€). Lecitraile 3E20 · Bastidor VV1A3DAGXSM115463 · arrastrado por 0704KVS. No aparece en ningún balance. ¿Titularidad? Regularizar con David urgente + pasar ITV.</span>
   </div>
+  <div class="alert a-warn">
+    <strong>⚠ NUEVO (08/04): IVA aplazado Mihai — son 3 expedientes, NO 1 (total 15.543€)</strong>
+    <span>Se han confirmado <strong>3 aplazamientos AEAT</strong> concedidos el 16/03/2026 (todos NIF X5938549H, sin garantía): Exp.452640310940A (4.507€) + Exp.452640310931V (3.486€) + Exp.452640310943Y (7.551€) = <strong>15.543€ total</strong>. Cuota combinada desde 20/05: <strong>~2.569€/mes</strong> (no 744€ como se tenía). Domiciliados en ES95 (Santander personal). Sale de SL → cuenta 551. Recargo pendiente M303 4T2025: <strong>111,50€</strong> (presentado 45 días tarde).</span>
+  </div>
   <div class="alert a-danger">
     <strong>🚨 URGENTE (10/04): Factura Galp flota 4014356340 — vence en 2 días</strong>
     <span>Factura Galp tarjeta flota (gasoil propio T1): base 3.739€ + IVA 21% + canje 330€ = <strong>4.201,17€ total</strong>. Vence <strong>10/04/2026</strong>. Domiciliada en cuenta 1200112080. Saldo ES40 actual: 27.347€ → cubierta ✅ pero saldrá en los próximos 2 días.</span>
@@ -1279,17 +1283,19 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
   </div>
 
   <div class="card mt4">
-    <div class="section-label" style="margin-top:0">IVA Aplazado AEAT — Desglose cuotas confirmadas</div>
+    <div class="section-label" style="margin-top:0">IVA Aplazado AEAT — 3 expedientes confirmados (total 15.543,46 €)</div>
+    <div class="alert a-danger" style="margin-bottom:12px"><strong>⚠ ATENCIÓN: Son 3 aplazamientos simultáneos, no 1</strong><span> Cuota combinada desde 20/05: ~2.569€/mes (6 meses). Total: 15.543,46€. Domiciliados en ES95 (Santander personal Mihai) → salen de SL vía cuenta 551.</span></div>
     <table class="table mt3">
-      <thead><tr><th>Cuota</th><th>Fecha límite</th><th>Importe</th><th>Estado</th><th>Nota</th></tr></thead>
+      <thead><tr><th>Fecha</th><th>Exp. 940A (4.507€)</th><th>Exp. 931V (3.486€)</th><th>Exp. 943Y (7.551€)</th><th class="fw7">TOTAL CUOTA</th><th>Estado</th></tr></thead>
       <tbody>
-        <tr><td class="fw7">1ª / 6</td><td class="text-warn fw7">20/05/2026</td><td class="text-warn fw7">744,78 €</td><td><span class="badge b-warn">Pendiente</span></td><td>Domiciliación AEAT — ES95 Santander personal</td></tr>
-        <tr><td class="fw7">2ª / 6</td><td>22/06/2026</td><td>747,33 €</td><td><span class="badge b-muted">Pendiente</span></td><td>Domiciliación AEAT</td></tr>
-        <tr><td class="fw7">3ª / 6</td><td>20/07/2026</td><td>749,80 €</td><td><span class="badge b-muted">Pendiente</span></td><td>Domiciliación AEAT</td></tr>
-        <tr><td class="fw7">4ª / 6</td><td>20/08/2026</td><td>752,35 €</td><td><span class="badge b-muted">Pendiente</span></td><td>Domiciliación AEAT</td></tr>
-        <tr><td class="fw7">5ª / 6</td><td>21/09/2026</td><td>754,90 €</td><td><span class="badge b-muted">Pendiente</span></td><td>Domiciliación AEAT</td></tr>
-        <tr><td class="fw7">6ª / 6</td><td>20/10/2026</td><td>757,39 €</td><td><span class="badge b-muted">Pendiente</span></td><td>Domiciliación AEAT — última cuota</td></tr>
-        <tr class="highlight-row"><td class="fw7">TOTAL</td><td></td><td class="fw7">4.506,55 €</td><td></td><td>Principal 4.436,60€ + Intereses 69,95€ · NIF X5938549H · Exp. 452640310940A</td></tr>
+        <tr><td class="fw7 text-warn">20/05/2026</td><td>744,78 €</td><td>576,17 €</td><td>1.247,85 €</td><td class="fw7 text-warn">2.568,80 €</td><td><span class="badge b-warn">Pendiente</span></td></tr>
+        <tr><td class="fw7">22/06/2026</td><td>747,33 €</td><td>578,14 €</td><td>1.252,13 €</td><td class="fw7">2.577,60 €</td><td><span class="badge b-muted">Pendiente</span></td></tr>
+        <tr><td class="fw7">20/07/2026</td><td>749,80 €</td><td>580,05 €</td><td>1.256,26 €</td><td class="fw7">2.586,11 €</td><td><span class="badge b-muted">Pendiente</span></td></tr>
+        <tr><td class="fw7">20/08/2026</td><td>752,35 €</td><td>582,03 €</td><td>1.260,54 €</td><td class="fw7">2.594,92 €</td><td><span class="badge b-muted">Pendiente</span></td></tr>
+        <tr><td class="fw7">21/09/2026</td><td>754,90 €</td><td>584,00 €</td><td>1.264,81 €</td><td class="fw7">2.603,71 €</td><td><span class="badge b-muted">Pendiente</span></td></tr>
+        <tr><td class="fw7">20/10/2026</td><td>757,39 €</td><td>585,95 €</td><td>1.268,98 €</td><td class="fw7">2.612,32 €</td><td><span class="badge b-muted">Pendiente — última</span></td></tr>
+        <tr class="highlight-row"><td class="fw7">TOTAL</td><td>4.506,55 €</td><td>3.486,34 €</td><td>7.550,57 €</td><td class="fw7 text-danger">15.543,46 €</td><td></td></tr>
+        <tr><td colspan="6" class="fs11 text-muted">Exp. 452640310940A (principal 4.436,60€) + Exp. 452640310931V (principal 3.432,22€) + Exp. 452640310943Y (principal 7.433,37€) · NIF X5938549H · Todos domiciliados ES95-0049-0456-9627-1070-5519 · Concedidos 16/03/2026 sin garantía</td></tr>
       </tbody>
     </table>
   </div>
@@ -1597,15 +1603,15 @@ function renderMonthlyProjection(){
 
 // ============ CALENDARIO FISCAL ============
 const EVENTOS_FISCALES = [
-  // IVA aplazado Mihai PERSONAL (X5938549H) — Expediente 452640310940A — 6 cuotas confirmadas
-  // Concepto: IVA Autoliquidación autónomo · Sin recargo · Domiciliado ES95-0049-0456-9627-1070-5519
-  // ¡¡ Primera cuota en MAYO, no en abril !!
-  {fecha:'2026-05-20', tipo:'warn', icono:'🟡', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 1/6', importe:744.78, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Dinero sale de SL → cuenta autónomo · Documentar como adelanto socio'},
-  {fecha:'2026-06-22', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 2/6', importe:747.33, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Adelanto socio'},
-  {fecha:'2026-07-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 3/6', importe:749.80, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Adelanto socio'},
-  {fecha:'2026-08-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 4/6', importe:752.35, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Adelanto socio'},
-  {fecha:'2026-09-21', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 5/6', importe:754.90, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Adelanto socio'},
-  {fecha:'2026-10-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai (autónomo) — Cuota 6/6', importe:757.39, cuenta:'ES40 SL → ES95 autónomo', nota:'Exp. 452640310940A · Última cuota · Total pagado: 4.506,55€'},
+  // IVA aplazado Mihai PERSONAL (X5938549H) — 3 expedientes confirmados — 6 cuotas cada uno
+  // Total 3 exp: 15.543,46€ · Domiciliado ES95-0049-0456-9627-1070-5519 (Santander personal)
+  // ¡¡ Primera cuota en MAYO, no en abril !! — Cuota combinada ~2.569€/mes
+  {fecha:'2026-05-20', tipo:'warn', icono:'🟡', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 1/6', importe:2568.80, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 744,78€ + Exp.931V 576,17€ + Exp.943Y 1.247,85€ = 2.568,80€ · Sale de SL → cuenta 551'},
+  {fecha:'2026-06-22', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 2/6', importe:2577.60, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 747,33€ + Exp.931V 578,14€ + Exp.943Y 1.252,13€ = 2.577,60€'},
+  {fecha:'2026-07-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 3/6', importe:2586.11, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 749,80€ + Exp.931V 580,05€ + Exp.943Y 1.256,26€ = 2.586,11€'},
+  {fecha:'2026-08-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 4/6', importe:2594.92, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 752,35€ + Exp.931V 582,03€ + Exp.943Y 1.260,54€ = 2.594,92€'},
+  {fecha:'2026-09-21', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 5/6', importe:2603.71, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 754,90€ + Exp.931V 584,00€ + Exp.943Y 1.264,81€ = 2.603,71€'},
+  {fecha:'2026-10-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 6/6', importe:2612.32, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 757,39€ + Exp.931V 585,95€ + Exp.943Y 1.268,98€ = 2.612,32€ · ÚLTIMA · Total 3 exp: 15.543,46€'},
   // IVA trimestral Mod. 303
   {fecha:'2026-04-20', tipo:'danger', icono:'🔴', concepto:'IVA T1 2026 — Modelo 303', importe:16000, cuenta:'ES12 (reserva IVA)', nota:'Estimado ~16.000 € · Reserva disponible: 13.400 €'},
   {fecha:'2026-07-20', tipo:'warn', icono:'🟡', concepto:'IVA T2 2026 — Modelo 303', importe:16000, cuenta:'ES12 (reserva IVA)', nota:'Estimado · Ir reservando en ES12'},
@@ -1958,11 +1964,12 @@ function renderTrimestres(){
     const rows = [
       ['IVA M303 SL (~16.000 €/trim estimado)',         '20 abr · 20 jul · 20 oct · 20 ene27',   16000, 16000, 16000, 16000, 64000, 'text-danger'],
       ['IRPF retenciones M111 nóminas',                 '20 abr · 20 jul · 20 oct · 20 ene27',   1100,  1100,  1100,  1100,  4400,  'text-warn'],
-      ['IVA aplazado Mihai personal (exp. 452640…)',    'may+jun / jul+ago+sep / oct',             0,     1492,  2257,  757,   4506,  'text-muted'],
+      ['IVA aplazado Mihai (3 exp: 940A+931V+943Y)',    'may+jun / jul+ago+sep / oct',             0,     5146,  7785,  2612,  15543, 'text-muted'],
+      ['Recargo M303 4T2025 autónomo (propuesta)',       'Pendiente resolución AEAT (~111€)',        0,     112,   0,     0,     112,   'text-warn'],
       ['Renta 2025 Mihai IRPF (est. directa ~22.500€)', 'jun 60% (~13.500) / nov 40% (~9.000)',   0,     13500, 0,     9000,  22500, 'text-danger'],
       ['IS M202 fraccionados 2026',                     'IS 2025 = pérdidas → cuota = 0 €',       0,     0,     0,     0,     0,     'text-success'],
     ];
-    const tots = [17100, 32092, 19357, 26857, 95406];
+    const tots = [17100, 35858, 24885, 28712, 106555];
     fiscalEl.innerHTML = rows.map(r=>{
       const [lab,vto,t1,t2,t3,t4,tot,cls] = r;
       const f2 = v => v>0 ? `<span class="${cls}">${fmt(v)}</span>` : '<span class="text-muted">—</span>';
@@ -1990,12 +1997,12 @@ function renderTrimestres(){
     let   saldo       = R.tesoreria;                // 27.347 € confirmado 07/04/2026 (post-cobros Mosca)
     // Saldo 07/04 ya incluye cobros ADL006+ADL005 y gastos inicio abril
     const saldoFinT1  = Math.round(saldo); // saldo real confirmado 07/04 (post-cobros)
-    // T2: +3 meses operativo − IVA T1+M111 (17.100) − Renta Mihai 60% (13.500) − IVA aplazado (1.492)
-    const saldoFinT2  = Math.round(saldoFinT1 + margenMes*3 - 17100 - 13500 - 1492);
-    // T3: +3 meses − IVA T2+M111 (17.100) − IVA aplazado may-sep (2.257)
-    const saldoFinT3  = Math.round(saldoFinT2 + margenMes*3 - 17100 - 2257);
-    // T4: +3 meses − IVA T3+M111 (17.100) − IVA aplazado oct (757) − Renta Mihai 40% (9.000)
-    const saldoFinT4  = Math.round(saldoFinT3 + margenMes*3 - 17100 - 757 - 9000);
+    // T2: +3 meses operativo − IVA T1+M111 (17.100) − Renta Mihai 60% (13.500) − IVA aplazado may+jun 3 exp (5.146)
+    const saldoFinT2  = Math.round(saldoFinT1 + margenMes*3 - 17100 - 13500 - 5146);
+    // T3: +3 meses − IVA T2+M111 (17.100) − IVA aplazado jul-sep 3 exp (7.785)
+    const saldoFinT3  = Math.round(saldoFinT2 + margenMes*3 - 17100 - 7785);
+    // T4: +3 meses − IVA T3+M111 (17.100) − IVA aplazado oct 3 exp (2.612) − Renta Mihai 40% (9.000)
+    const saldoFinT4  = Math.round(saldoFinT3 + margenMes*3 - 17100 - 2612 - 9000);
 
     // Cobros CaixaBank factoring — confirmados banco 07/04/2026
     const cobro_adl006 = 32880;  // ✅ COBRADO 01/04/2026 — ya incluido en saldo 27.347€
@@ -2003,9 +2010,9 @@ function renderTrimestres(){
     const cobro_adl007 = 29755;  // pendiente — vence 04/05/2026
     const cajaPre20abr  = R.tesoreria; // 27.347€ real 07/04 (cobros ADL006+ADL005 ya incluidos)
     const cajaPost20abr = cajaPre20abr - 17100; // − IVA T1 + M111 (20/04)
-    const saldoFinT2_real = Math.round(cajaPost20abr + margenMes*2 + cobro_adl007 - 13500 - 1492);
-    const saldoFinT3_real = Math.round(saldoFinT2_real + margenMes*3 - 17100 - 2257);
-    const saldoFinT4_real = Math.round(saldoFinT3_real + margenMes*3 - 17100 - 757 - 9000);
+    const saldoFinT2_real = Math.round(cajaPost20abr + margenMes*2 + cobro_adl007 - 13500 - 5146);
+    const saldoFinT3_real = Math.round(saldoFinT2_real + margenMes*3 - 17100 - 7785);
+    const saldoFinT4_real = Math.round(saldoFinT3_real + margenMes*3 - 17100 - 2612 - 9000);
 
     const col = v => v<5000?'var(--danger)':v<15000?'var(--warn)':'var(--success)';
     tesEl.innerHTML = `
@@ -2042,8 +2049,8 @@ function renderTrimestres(){
             <td style="padding:6px 8px;text-align:right" class="text-success">~${fmt(Math.round(cajaPost20abr+cobro_adl007))}</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:6px 8px">20/05 — IVA aplazado Mihai 1/6</td>
-            <td style="padding:6px 8px;text-align:right" class="text-warn">−745 €</td>
+            <td style="padding:6px 8px">20/05 — IVA aplazado Mihai 3 exp. combinado 1/6</td>
+            <td style="padding:6px 8px;text-align:right" class="text-warn">−2.569 €</td>
             <td style="padding:6px 8px;text-align:right">—</td>
           </tr>
           <tr style="border-bottom:2px solid var(--border);background:rgba(239,68,68,.05)">
