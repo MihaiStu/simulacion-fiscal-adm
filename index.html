@@ -1967,8 +1967,8 @@ function renderTrimestres(){
   // ── SALDO PROYECTADO (cálculo compartido fiscal + tesorería) ─────────────────
   const _aprovMes   = Math.round(aprovT1 / 3);
   const _margenMes  = ingMes - (_aprovMes + totalFijosMes);
-  const _saldoT1    = R.tesoreria;                          // 50.721€ real 08/04 (total SL)
   const _cajaPost20abr = R.tesoreria - 17100 - 1186;        // tras IVA T1+M111 + aplaz.SL cuota1
+  const _saldoT1    = _cajaPost20abr;                       // saldo TRAS pagos 20/04 (50.721 − 18.286 = 32.435€)
   const _saldoT2    = Math.round(_cajaPost20abr + _margenMes*2 + 29755 - 13500 - 5146 - 2373); // −aplaz.SL may+jun
   const _saldoT3    = Math.round(_saldoT2 + _margenMes*3 - 17100 - 7785);
   const _saldoT4    = Math.round(_saldoT3 + _margenMes*3 - 17100 - 2612 - 9000);
