@@ -1845,13 +1845,18 @@ function renderTrimestres(){
                     + sanMes*3 + segT1real + gtofMes*3 + galT1 + rsT1 + orgT1 + otrT1 + repT1 + multaT1;
 
   // ── INGRESOS — 11 FACTURAS CONFIRMADAS ───────────────────────────────────────
-  // Asignación por período de factura:
-  // Ene: 26_ADL0005(3.200)+26_ADLOO04(35.737,50)+2600008943(3.808,86) = 42.746,36
+  // ⚠ ALERTA DEVENGO: 26_ADL0005 (3.200€) y 26_ADLOO04 (35.737,50€) son viajes de 2025 facturados en 2026
+  // Por principio de devengo (art. 11 LIS) corresponden a 2025 — confirmar con David Lahuerta si ya están en 2025 en Odoo
+  // Si se reclasifican: ingT1 2026 real = 112.086€ · BAI T1 ~34.500€ · IS 2025 ~7.782€ (deja de ser 0) · BINs = 0
+  // Asignación por período de factura (cobro 2026):
+  // Ene: 26_ADL0005(3.200⚠2025)+26_ADLOO04(35.737,50⚠2025)+2600008943(3.808,86) = 42.746,36
   // Feb: 2600008963(5.703,45)+2600011196(6.368,93)+26_ADL0006(31.803,45)+2600014130(4.630,13) = 48.505,96
   // Mar: 26_ADL0007(40.618,65)+2600015473(7.009,14)+2600017985(6.264,76)+2600020224(5.878,08) = 59.770,63
   const ingEne = 42746.36, ingFeb = 48505.96, ingMar = 59770.63;
-  const ingT1  = 151022.95;  // 11 facturas confirmadas — suma exacta
-  const ingMes = Math.round(ingT1 / 3);   // ~50.341 €/mes ritmo T1
+  const ing2025en2026 = 38937.50; // 26_ADL0005(3.200) + 26_ADLOO04(35.737,50) — viajes 2025, pendiente confirmar devengo
+  const ingT1  = 151022.95;  // cobros T1 — incluye 38.937€ de servicios 2025 ⚠ pendiente confirmar con asesoría
+  const ingT1fiscal = ingT1 - ing2025en2026; // 112.086€ — solo servicios prestados en 2026 (para BAI/IS)
+  const ingMes = Math.round(ingT1 / 3);      // ~50.341 €/mes — ritmo cobros (carryover 2025 fue puntual, T2-T4 retoma pace normal)
   const ingT2  = ingMes * 3;   // 151.023 € (mismo ritmo conservador)
   const ingT3  = ingMes * 3;
   const ingT4  = ingMes * 3;
@@ -1873,7 +1878,7 @@ function renderTrimestres(){
 
   // ── BAI por trimestre ────────────────────────────────────────────────────────
   // T1: usa costes REALES banco; T2-T4: proyección mensual × 3
-  const baiT1 = ingT1 - aprovT1 - fijosT1real;
+  const baiT1 = ingT1fiscal - aprovT1 - fijosT1real; // usa ingT1fiscal (excl. 38.937€ servicios 2025)
   const baiT2 = ingT2 - aprovT2 - totalFijosMes*3;
   const baiT3 = ingT3 - aprovT3 - totalFijosMes*3;
   const baiT4 = ingT4 - aprovT4 - totalFijosMes*3;
@@ -1890,7 +1895,7 @@ function renderTrimestres(){
     const gastosTotal = aprovT1 + fijosT1real;
     const margenPct = Math.round(baiT1/ingT1*100);
     kpiResEl.innerHTML = [
-      {t:'Ingresos T1 REALES',   v:fmt(Math.round(ingT1)),   sub:'Contratos Mosca confirmados + pendientes mar',   cls:'text-success', border:'var(--success)'},
+      {t:'Ingresos T1 REALES',   v:fmt(Math.round(ingT1)),   sub:`Cobros T1: ${fmt(Math.round(ingT1))} · Fiscal 2026: ${fmt(Math.round(ingT1fiscal))} (excl. 38.937€ servicios 2025 ⚠)`,   cls:'text-success', border:'var(--success)'},
       {t:'Gastos T1 REALES (todo)', v:fmt(Math.round(gastosTotal)), sub:`Subcontratas ${fmt(aprovT1)} + personal+fijos ${fmt(Math.round(fijosT1real))}`, cls:'text-danger', border:'var(--danger)'},
       {t:'BAI T1 REAL', v:fmt(Math.round(baiT1)), sub:`Margen ${margenPct}% · Gasoil total T1: ~39.196€ (Mosca+Andamur+Galp)`, cls:baiT1>0?'text-success':'text-danger', border:baiT1>60000?'var(--success)':'var(--warn)'},
       {t:'IS T1 provisional (25%)', v:fmt(isT1), sub:`BI: ${fmt(biT1)} (BAI − BINs 7.807€)`, cls:'text-danger', border:'var(--danger)'},
