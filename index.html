@@ -269,7 +269,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
   </div>
   <div class="alert a-warn">
     <strong>⚠ NUEVO (19/03): ~39.663 € en facturas emitidas pendientes de registrar en Odoo</strong>
-    <span>Los 7 trabajos adicionales (facturas 2600008943, 2600008963, 2600011196, 2600014130, 2600015473, 2600017985, 2600020224) suman <strong>39.663 € base imponible</strong> y no aparecen en los ingresos Odoo (111.379 €). Solo los 4 contratos grandes están reconocidos. El revenue real T1 es ~151.023 €. David debe registrar estas facturas y sus costes asociados.</span>
+    <span>Los 7 trabajos adicionales (facturas 2600008943, 2600008963, 2600011196, 2600014130, 2600015473, 2600017985, 2600020224) suman <strong>39.663 € base imponible</strong> y no aparecen en los ingresos Odoo (111.379 €). Solo los 4 contratos grandes están reconocidos. Ingresos fiscales 2026 reales: <strong>112.086 €</strong> (excl. ADL0005+ADL0004 que son servicios de 2025). David debe registrar estas facturas y sus costes asociados.</span>
   </div>
   <div class="alert a-danger">
     <strong>🚨 Tipo IS 15% BLOQUEADO — Art. 29.1 LIS: actividad previa como autónomo</strong>
@@ -618,7 +618,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
         <tbody>
           <tr><td>Mosca-Marítimo SL</td><td>3 facturas</td><td class="text-success">108.180 €</td><td class="text-danger fw7">97,1%</td></tr>
           <tr><td>Transportes El Mosca SA</td><td>1 factura</td><td>3.200 €</td><td class="text-danger">2,9%</td></tr>
-          <tr class="highlight-row"><td class="fw7">TOTAL T1 2026 (cobros)</td><td>11 facturas</td><td class="fw7">151.023 €</td><td class="text-danger fw7">100%</td></tr>
+          <tr class="highlight-row"><td class="fw7">TOTAL T1 2026 (fiscal 2026)</td><td>9 facturas</td><td class="fw7">112.086 €</td><td class="text-danger fw7">100%</td></tr>
         </tbody>
       </table>
       <p class="text-muted fs11 mt2">Mosca-Marítimo SL y Transportes El Mosca SA son parte del mismo grupo empresarial.</p>
@@ -919,8 +919,8 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
       </div>
       <div style="background:rgba(16,185,129,.08);border:1px solid var(--success);border-radius:8px;padding:12px">
         <div class="card-title">= INGRESOS T1 REALES</div>
-        <div class="card-value text-success fw7" style="font-size:22px">151.023 €</div>
-        <div class="card-sub">11 facturas confirmadas · base imponible</div>
+        <div class="card-value text-success fw7" style="font-size:22px">112.086 €</div>
+        <div class="card-sub">9 facturas 2026 · base imponible (excl. ADL0005+ADL0004 = servicios 2025)</div>
       </div>
     </div>
     <div class="g3">
@@ -1129,8 +1129,8 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
         <tr><td class="text-muted">Resultado 2025</td><td class="fw7 text-danger">-7.807 € (pérdidas)</td></tr>
         <tr><td class="text-muted">IS 2025</td><td>0 € (pérdidas)</td></tr>
         <tr><td class="text-muted">BINs compensables 2026</td><td class="text-success fw7">7.807 €</td></tr>
-        <tr><td class="text-muted">Facturación 2026 T1 (90 días · confirmado)</td><td class="fw7">151.023 €</td></tr>
-        <tr><td class="text-muted">BAI T1 2026 real (banco confirmado)</td><td class="fw7 text-success">~73.500 € ✅</td></tr>
+        <tr><td class="text-muted">Facturación 2026 T1 (fiscal · servicios 2026)</td><td class="fw7">112.086 €</td></tr>
+        <tr><td class="text-muted">BAI T1 2026 (fiscal)</td><td class="fw7 text-success">~34.000 € ✅</td></tr>
         <tr><td class="text-muted">BAI 2026 anual proyectado</td><td class="fw7 text-success">~220.000 € (ver P&G trimestral)</td></tr>
         <tr><td class="text-muted">Nóminas en B (no deducible)</td><td class="text-warn fw7">1.200 €/mes · 14.400 €/año</td></tr>
         <tr><td class="text-muted">IS 2026 estimado al 25%</td><td class="text-danger fw7">~65.000 € ⚠ reservar ~4k€/mes</td></tr>
@@ -1893,9 +1893,9 @@ function renderTrimestres(){
     const biT1 = Math.max(0, baiT1 + multaT1 - R.basesNeg);
     const isT1  = Math.round(biT1 * 0.25);
     const gastosTotal = aprovT1 + fijosT1real;
-    const margenPct = Math.round(baiT1/ingT1*100);
+    const margenPct = Math.round(baiT1/ingT1fiscal*100);
     kpiResEl.innerHTML = [
-      {t:'Ingresos T1 REALES',   v:fmt(Math.round(ingT1)),   sub:`Cobros T1: ${fmt(Math.round(ingT1))} · Fiscal 2026: ${fmt(Math.round(ingT1fiscal))} (excl. 38.937€ servicios 2025 ⚠)`,   cls:'text-success', border:'var(--success)'},
+      {t:'Ingresos T1 2026 (fiscal)',   v:fmt(Math.round(ingT1fiscal)),   sub:`Servicios prestados en 2026 · Cobros totales T1: ${fmt(Math.round(ingT1))} (incl. 38.937€ servicios 2025 excluidos)`,   cls:'text-success', border:'var(--success)'},
       {t:'Gastos T1 REALES (todo)', v:fmt(Math.round(gastosTotal)), sub:`Subcontratas ${fmt(aprovT1)} + personal+fijos ${fmt(Math.round(fijosT1real))}`, cls:'text-danger', border:'var(--danger)'},
       {t:'BAI T1 REAL', v:fmt(Math.round(baiT1)), sub:`Margen ${margenPct}% · Gasoil total T1: ~39.196€ (Mosca+Andamur+Galp)`, cls:baiT1>0?'text-success':'text-danger', border:baiT1>60000?'var(--success)':'var(--warn)'},
       {t:'IS T1 provisional (25%)', v:fmt(isT1), sub:`BI: ${fmt(biT1)} (BAI − BINs 7.807€)`, cls:'text-danger', border:'var(--danger)'},
@@ -1909,7 +1909,7 @@ function renderTrimestres(){
   // ── KPI POR TRIMESTRE ────────────────────────────────────────────────────────
   const kpiEl = document.getElementById('trim-kpis');
   if(kpiEl) kpiEl.innerHTML = [
-    {label:'T1 (Ene–Mar)', ing:ingT1, bai:baiT1, color:'var(--success)', badge:'✅ Real confirmado'},
+    {label:'T1 (Ene–Mar)', ing:ingT1fiscal, bai:baiT1, color:'var(--success)', badge:'✅ Real confirmado'},
     {label:'T2 (Abr–Jun)', ing:ingT2, bai:baiT2, color:'var(--muted)',   badge:'Proyectado'},
     {label:'T3 (Jul–Sep)', ing:ingT3, bai:baiT3, color:'var(--muted)',   badge:'Proyectado'},
     {label:'T4 (Oct–Dic)', ing:ingT4, bai:baiT4, color:'var(--muted)',   badge:'Proyectado'},
@@ -1929,7 +1929,7 @@ function renderTrimestres(){
     // T1 usa valor real banco; T2-T4 usa proyección mensual
     // [label, T1, T2, T3, T4, Total, clase, isSubtotal]
     const rows = [
-      ['INGRESOS — facturas emitidas a Mosca', ingT1, ingT2, ingT3, ingT4, ingT1+ingT2+ingT3+ingT4, 'text-success fw7', true],
+      ['INGRESOS — facturas emitidas a Mosca', ingT1fiscal, ingT2, ingT3, ingT4, ingT1fiscal+ingT2+ingT3+ingT4, 'text-success fw7', true],
       ['Gasoil El Mosca SA (carburante flota — red Mosca)', -aprovT1, -aprovT2, -aprovT3, -aprovT4, -(aprovT1+aprovT2+aprovT3+aprovT4), 'text-danger', false],
       ['Nóminas declaradas (3 conductores)', -nomT1real, -nomDecMes*3, -nomDecMes*3, -nomDecMes*3, -(nomT1real+nomDecMes*9), '', false],
       ['Nóminas en B ⚠ (3×400€ — NO deducible IS)', -nomBMes*3, -nomBMes*3, -nomBMes*3, -nomBMes*3, -nomBMes*12, 'text-warn', false],
