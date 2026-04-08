@@ -1673,10 +1673,12 @@ function renderCalendario(){
     const evs = meses[key].sort((a,b) => a.fecha.localeCompare(b.fecha));
     const total = evs.reduce((s,e)=>s+e.importe,0);
     const hasUrgent = evs.some(e=>e.tipo==='danger');
+    const hasWarn   = evs.some(e=>e.tipo==='warn');
+    const totalColor = hasUrgent ? 'var(--danger)' : hasWarn ? 'var(--warn)' : 'var(--accent2)';
     return `<div class="card mb4" style="border-left:4px solid ${hasUrgent?'var(--danger)':'var(--accent2)'}">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
         <div class="fw7" style="font-size:15px">${mNames[parseInt(m)-1]} ${y}</div>
-        <div class="fw7 text-danger">Total: ${total.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})} €</div>
+        <div class="fw7" style="color:${totalColor}">Total: ${total.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})} €</div>
       </div>
       <table class="table">
         <thead><tr><th>Fecha</th><th>Concepto</th><th>Importe</th><th>Cuenta</th><th>Nota</th></tr></thead>
