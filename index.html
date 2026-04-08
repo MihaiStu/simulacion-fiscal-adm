@@ -1612,6 +1612,10 @@ const EVENTOS_FISCALES = [
   {fecha:'2026-08-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 4/6', importe:2594.92, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 752,35€ + Exp.931V 582,03€ + Exp.943Y 1.260,54€ = 2.594,92€'},
   {fecha:'2026-09-21', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 5/6', importe:2603.71, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 754,90€ + Exp.931V 584,00€ + Exp.943Y 1.264,81€ = 2.603,71€'},
   {fecha:'2026-10-20', tipo:'info', icono:'🟢', concepto:'IVA Aplazado Mihai — 3 exp. combinado Cuota 6/6', importe:2612.32, cuenta:'ES95 (autónomo) ← SL cta.551', nota:'Exp.940A 757,39€ + Exp.931V 585,95€ + Exp.943Y 1.268,98€ = 2.612,32€ · ÚLTIMA · Total 3 exp: 15.543,46€'},
+  // Aplazamiento SL (B22571921) — M303 rectificadas 2025 — exp. 452640305760K
+  {fecha:'2026-04-20', tipo:'danger', icono:'🔴', concepto:'Aplazamiento IVA SL (exp.452640305760K) — Cuota 1/3', importe:1186.47, cuenta:'ES40 (operativa SL)', nota:'M303 rectificadas 2025 · Total 3.559,40€ en 3 cuotas (abr-may-jun) · NIF B22571921 · Exp. 452640305760K'},
+  {fecha:'2026-05-20', tipo:'warn', icono:'🟡', concepto:'Aplazamiento IVA SL (exp.452640305760K) — Cuota 2/3', importe:1186.47, cuenta:'ES40 (operativa SL)', nota:'M303 rectificadas 2025 · Exp. 452640305760K'},
+  {fecha:'2026-06-20', tipo:'warn', icono:'🟡', concepto:'Aplazamiento IVA SL (exp.452640305760K) — Cuota 3/3', importe:1186.46, cuenta:'ES40 (operativa SL)', nota:'M303 rectificadas 2025 · Última cuota · Total pagado: 3.559,40€'},
   // IVA trimestral Mod. 303
   {fecha:'2026-04-20', tipo:'danger', icono:'🔴', concepto:'IVA T1 2026 — Modelo 303', importe:16000, cuenta:'ES12 (reserva IVA)', nota:'Estimado ~16.000 € · Reserva disponible: 13.400 €'},
   {fecha:'2026-07-20', tipo:'warn', icono:'🟡', concepto:'IVA T2 2026 — Modelo 303', importe:16000, cuenta:'ES12 (reserva IVA)', nota:'Estimado · Ir reservando en ES12'},
@@ -1962,8 +1966,8 @@ function renderTrimestres(){
   const _aprovMes   = Math.round(aprovT1 / 3);
   const _margenMes  = ingMes - (_aprovMes + totalFijosMes);
   const _saldoT1    = R.tesoreria;                          // 27.347€ real 07/04
-  const _cajaPost20abr = R.tesoreria - 17100;               // tras IVA T1+M111
-  const _saldoT2    = Math.round(_cajaPost20abr + _margenMes*2 + 29755 - 13500 - 5146);
+  const _cajaPost20abr = R.tesoreria - 17100 - 1186;        // tras IVA T1+M111 + aplaz.SL cuota1
+  const _saldoT2    = Math.round(_cajaPost20abr + _margenMes*2 + 29755 - 13500 - 5146 - 2373); // −aplaz.SL may+jun
   const _saldoT3    = Math.round(_saldoT2 + _margenMes*3 - 17100 - 7785);
   const _saldoT4    = Math.round(_saldoT3 + _margenMes*3 - 17100 - 2612 - 9000);
 
@@ -1973,12 +1977,13 @@ function renderTrimestres(){
     const rows = [
       ['IVA M303 SL (~16.000 €/trim estimado)',         '20 abr · 20 jul · 20 oct · 20 ene27',   16000, 16000, 16000, 16000, 64000, 'text-danger'],
       ['IRPF retenciones M111 nóminas',                 '20 abr · 20 jul · 20 oct · 20 ene27',   1100,  1100,  1100,  1100,  4400,  'text-warn'],
+      ['Aplazamiento IVA SL (exp.452640305760K)',         '20 abr · 20 may · 20 jun',                1186,  2373,  0,     0,     3559,  'text-danger'],
       ['IVA aplazado Mihai (3 exp: 940A+931V+943Y)',    'may+jun / jul+ago+sep / oct',             0,     5146,  7785,  2612,  15543, 'text-muted'],
       ['Recargo M303 4T2025 autónomo (propuesta)',       'Pendiente resolución AEAT (~111€)',        0,     112,   0,     0,     112,   'text-warn'],
       ['Renta 2025 Mihai IRPF (est. directa ~22.500€)', 'jun 60% (~13.500) / nov 40% (~9.000)',   0,     13500, 0,     9000,  22500, 'text-danger'],
       ['IS M202 fraccionados 2026',                     'IS 2025 = pérdidas → cuota = 0 €',       0,     0,     0,     0,     0,     'text-success'],
     ];
-    const tots = [17100, 35858, 24885, 28712, 106555];
+    const tots = [18286, 38231, 24885, 28712, 110114];
     const saldos = [_saldoT1, _saldoT2, _saldoT3, _saldoT4];
     const colS = v => v < 0 ? 'var(--danger)' : v < 15000 ? 'var(--warn)' : 'var(--success)';
     fiscalEl.innerHTML = rows.map(r=>{
