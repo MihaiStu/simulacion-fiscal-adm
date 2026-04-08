@@ -159,28 +159,28 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
 
   <div class="g4 mb4">
     <div class="card">
-      <div class="card-title">Ingresos T1 2026 (Odoo)</div>
-      <div class="card-value text-accent">111.380 €</div>
-      <div class="card-sub">Confirmado Balance Odoo 19/03/2026</div>
-      <div class="kpi-delta up">+ ~39.663 € facturas pendientes de registrar</div>
-    </div>
-    <div class="card" style="border:1px solid var(--danger)">
-      <div class="card-title">Resultado T1 Odoo ⚠ INCOMPLETO</div>
-      <div class="card-value text-warn">74.199 €</div>
-      <div class="card-sub">Odoo no incluye subcontratas Mosca (~27.693 €)</div>
-      <div class="kpi-delta down">BAI real ajustado: ~46.506 € (coste ingresos = 0 en Odoo)</div>
+      <div class="card-title">Ingresos T1 2026 — cobros reales</div>
+      <div class="card-value text-accent">151.023 €</div>
+      <div class="card-sub">11 facturas confirmadas banco · T1 completo (ene–mar)</div>
+      <div class="kpi-delta down">⚠ Incluye 38.937€ servicios 2025 (ADL0005+ADL0004) — confirmar devengo con OKasesores</div>
     </div>
     <div class="card">
-      <div class="card-title">IS T1 provisional (25%)</div>
-      <div class="card-value text-danger">9.675 €</div>
-      <div class="card-sub">Sobre BAI ajustado 46.506 − BINs 7.807 = BI 38.699 €</div>
-      <div class="kpi-delta down">Con resultado Odoo bruto: IS sería 16.598 € (sobreestimado)</div>
+      <div class="card-title">BAI T1 2026 — real banco</div>
+      <div class="card-value text-success">~73.500 €</div>
+      <div class="card-sub">Cobros T1 − gasoil Mosca − todos los fijos reales</div>
+      <div class="kpi-delta down">Fiscal (excl. servicios 2025): ~34.500 € · Confirmar con asesoría</div>
     </div>
     <div class="card">
-      <div class="card-title">ES40 saldo operativa (07/04)</div>
-      <div class="card-value text-success">27.347 €</div>
-      <div class="card-sub">Banco Santander ES40 confirmado 07/04/2026</div>
-      <div class="kpi-delta up">Cobrado: ADL006 (32.880€ 01/04) + ADL005 (3.872€ 07/04) ✅ · ADL007 pendiente 04/05</div>
+      <div class="card-title">IS 2026 estimado (25%)</div>
+      <div class="card-value text-danger">~65.000 €</div>
+      <div class="card-sub">Proyección año completo · Vence julio 2027</div>
+      <div class="kpi-delta down">Reservar ~4.000 €/mes · BINs 7.807€ pendientes confirmar</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tesorería SL (08/04)</div>
+      <div class="card-value text-success">50.721 €</div>
+      <div class="card-sub">Total SL · Caja libre: 5.475 €</div>
+      <div class="kpi-delta up">ADL006 ✅ ADL005 ✅ cobradas · ADL007 (29.755€) vence 04/05 · Pago 20/04: 18.286€</div>
     </div>
   </div>
 
@@ -195,19 +195,19 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
       <div class="card-title">Patrimonio Neto (19/03/26)</div>
       <div class="card-value">69.392 €</div>
       <div class="card-sub">Capital 3k + resultado 74k − pérd. 7.8k</div>
-      <div class="kpi-delta down">vs 76.446 € antes — baja por gastos adicionales contabilizados</div>
+      <div class="kpi-delta down">Balance Odoo 19/03 — pendiente actualizar con T1 completo</div>
     </div>
     <div class="card">
       <div class="card-title">Pasivo Corriente (19/03/26)</div>
       <div class="card-value text-warn">109.340 €</div>
       <div class="card-sub">Otros acreedores: 104.541 €</div>
-      <div class="kpi-delta down">Deudas entidades crédito: −14.201 € (factoring) + 19.000 otros</div>
+      <div class="kpi-delta down">Balance Odoo 19/03 — incluye IVA, SS, aplazamientos</div>
     </div>
     <div class="card">
-      <div class="card-title">Clientes pendiente cobro</div>
-      <div class="card-value text-warn">119.067 €</div>
-      <div class="card-sub">95 días promedio pago — 100% Grupo Mosca</div>
-      <div class="kpi-delta down">Factoring CaixaBank activo · Por pagar: 59.076 €</div>
+      <div class="card-title">Pendiente de cobro</div>
+      <div class="card-value text-success">29.755 €</div>
+      <div class="card-sub">Solo ADL007 · Vence 04/05/2026</div>
+      <div class="kpi-delta up">ADL006 (32.880€) + ADL005 (3.872€) ya cobradas ✅</div>
     </div>
   </div>
 
@@ -289,7 +289,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
   </div>
   <div class="alert a-danger">
     <strong>🚨 URGENTE (10/04): Factura Galp flota 4014356340 — vence en 2 días</strong>
-    <span>Factura Galp tarjeta flota (gasoil propio T1): base 3.739€ + IVA 21% + canje 330€ = <strong>4.201,17€ total</strong>. Vence <strong>10/04/2026</strong>. Domiciliada en cuenta 1200112080. Saldo ES40 actual: 27.347€ → cubierta ✅ pero saldrá en los próximos 2 días.</span>
+    <span>Factura Galp tarjeta flota (gasoil propio T1): base 3.739€ + IVA 21% + canje 330€ = <strong>4.201,17€ total</strong>. Domiciliada en cuenta 1200112080 ✅ — cobro confirmado domiciliación.</span>
   </div>
   <div class="alert a-success">
     <strong>✅ NUEVO (07/04): IVA T1 20/04 CUBIERTO — Tesorería saneada</strong>
@@ -2036,7 +2036,7 @@ function renderTrimestres(){
     tesEl.innerHTML = `
     <div class="alert a-success" style="margin-bottom:12px">
       <strong>✅ Cobros CaixaBank CONFIRMADOS banco:</strong>
-      <span> <strong>01/04: +32.880€</strong> (26_ADL0006 ✅) · <strong>07/04: +3.872€</strong> (26_ADL0005 ✅) · 04/05: +29.755€ (26_ADL0007 pendiente). Saldo actual ES40: <strong>27.347€</strong> · IVA T1 20/04 (~17.100€): CUBIERTO ✅ · Galp flota vence 10/04: 4.201€.</span>
+      <span> <strong>01/04: +32.880€</strong> (26_ADL0006 ✅) · <strong>07/04: +3.872€</strong> (26_ADL0005 ✅) · 04/05: +29.755€ (26_ADL0007 pendiente). Cuenta SL total 08/04: <strong>50.721€</strong> · IVA T1+M111+aplaz.SL 20/04 (18.286€): CUBIERTO ✅ · Galp domiciliada ✅.</span>
     </div>
     <div style="overflow-x:auto;margin-bottom:16px">
       <table style="width:100%;border-collapse:collapse;font-size:12px">
@@ -2094,7 +2094,7 @@ function renderTrimestres(){
     <div class="alert a-warn mt3">
       <strong>Margen operativo neto proyectado: ${fmt(margenMes)}/mes</strong>
       <span> (ingresos ${fmt(ingMes)} − gasoil Mosca ${fmt(aprovMesLocal)} − todos fijos ${fmt(totalCostosMesLocal)} incl. Andamur+Galp).
-      <strong>Reservar 5.000-6.000€/mes en ES71</strong> para IS 2026 (~65.000€, jul-27). IVA T1 20/04: CUBIERTO ✅ (saldo 27.347€). Galp fleet 10/04: 4.201€. Junio más duro: Renta Mihai 60% (~13.500€). ADL007 (29.755€) llega 04/05 antes de Renta ✅. Fisio 686€ → cuenta 551 (facturas disponibles).</span>
+      <strong>Reservar ~4.000€/mes</strong> para IS 2026 (~65.000€, jul-27). Tesorería SL 08/04: 50.721€ · Pago 20/04 (18.286€): CUBIERTO ✅. Galp domiciliada ✅. ADL007 (29.755€) llega 04/05 antes de Renta Mihai (30/06 13.500€) ✅. Fisio 686€ → cuenta 551.</span>
     </div>`;
   }
 
