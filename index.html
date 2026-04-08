@@ -1329,13 +1329,13 @@ const R = {
   is25: 9675,                   // IS 25% sobre BI ajustado T1: 9.675 €
   is25anual: 55000,             // IS proyección anual 2026 (estimado conservador)
 
-  // ── Tesorería (Balance 19/03/2026) ─────────────────────────────────────────
-  tesoreria: 27347,             // ES40 saldo disponible 07/04/2026 (confirmado banco Santander)
-  tesoreriaOperativa: 27347,    // ES40 tras cobros ADL006 (32.880) + ADL005 (3.872) − gastos abr
+  // ── Tesorería (08/04/2026 — cuenta SL total) ────────────────────────────────
+  tesoreria: 50721,             // Total SL 08/04/2026 · gastos comprometidos 26.347 + IVA reservado 18.900 + caja libre 5.475
+  tesoreriaOperativa: 26347,    // ES40 gastos diarios comprometidos
   tesoreriaDesglose: [
-    {cuenta:'ES40 (operativa)', saldo:27347},
-    {cuenta:'ES12 (reserva IVA)', saldo:13400},
-    {cuenta:'ES71 (ahorro/IS)', saldo:2675},
+    {cuenta:'ES40 (gastos diarios comprometidos)', saldo:26347},
+    {cuenta:'IVA y impuestos reservados', saldo:18900},
+    {cuenta:'Caja libre disponible', saldo:5474},
   ],
 
   // ── Balance 19/03/2026 ──────────────────────────────────────────────────────
@@ -1967,7 +1967,7 @@ function renderTrimestres(){
   // ── SALDO PROYECTADO (cálculo compartido fiscal + tesorería) ─────────────────
   const _aprovMes   = Math.round(aprovT1 / 3);
   const _margenMes  = ingMes - (_aprovMes + totalFijosMes);
-  const _saldoT1    = R.tesoreria;                          // 27.347€ real 07/04
+  const _saldoT1    = R.tesoreria;                          // 50.721€ real 08/04 (total SL)
   const _cajaPost20abr = R.tesoreria - 17100 - 1186;        // tras IVA T1+M111 + aplaz.SL cuota1
   const _saldoT2    = Math.round(_cajaPost20abr + _margenMes*2 + 29755 - 13500 - 5146 - 2373); // −aplaz.SL may+jun
   const _saldoT3    = Math.round(_saldoT2 + _margenMes*3 - 17100 - 7785);
